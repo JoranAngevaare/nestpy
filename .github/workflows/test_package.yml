@@ -29,6 +29,11 @@ jobs:
       - name: pre install numpy
         if: matrix.python-version == 2.7 || matrix.python-version == 3.6
         run: pip install numpy==1.13
+      - name: check pip install
+        run: |
+          pip install nestpy
+          python -c "import nestpy; print(nestpy.__version__)"
+            
       - name: test install
         run: |
           pip install wheel
