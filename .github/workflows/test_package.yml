@@ -37,3 +37,9 @@ jobs:
           pip install wheel
           python setup.py test
           python setup.py bdist_wheel
+      - name: coverage test
+        if: matrix.python-version == 3.8
+        run: |
+          pip install coverage
+          coverage run --source=src/nestpy/ setup.py test
+          coverage report
