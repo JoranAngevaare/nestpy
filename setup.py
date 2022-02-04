@@ -68,7 +68,7 @@ class CMakeBuild(build_ext):
         print()  # Add an empty line for cleaner output
 
 readme = open('README.md').read()
-history = open('HISTORY.md', , encoding="utf8").read().replace('.. :changelog:', '')
+history = open('HISTORY.md', encoding="utf8").read().replace('.. :changelog:', '')
 requirements = open('requirements.txt').read().splitlines()
 
 setup(
