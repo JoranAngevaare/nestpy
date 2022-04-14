@@ -27,5 +27,5 @@ jobs:
         run:
          | 
          pip install twine 
-         python setup.py sdist bdist_wheel
-         twine upload dist/*.whl
+         python setup.py bdist_wheel
+         python -m twine upload -u "${TWINE_USERNAME}" -p "${TWINE_PASSWORD}" dist/*; 
